@@ -86,7 +86,7 @@ h2 {
 h3 {
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
-  color: var(--color-black);
+  color: var(--color-yellow);
   margin: 8px 0;
 }
 
@@ -170,8 +170,8 @@ p {
 section {
   padding: 50px;
   text-align: center;
-  max-width: 1920px;
-  margin: auto;
+  /* max-width: 1920px; */
+  /* margin: auto; */
 }
 
 /* About */
@@ -253,6 +253,7 @@ section {
  background-color: var(--color-yellow);
 }
 
+
 .skillset {
   display: flex;
   margin-top: 50px;
@@ -312,6 +313,10 @@ section {
 }
 
 /* Work */
+#works h3 {
+  color: var(--color-purple);
+}
+
 .work__categories {
   margin: 40px;
 }
@@ -408,6 +413,14 @@ section {
   background-color: var(--color-dark-white);
 }
 
+#testimonials {
+  background-color: var(--color-purple);
+}
+
+#testimonials h1 {
+  color: var(--color-yellow);
+}
+
 .testimonials {
   margin: 40px; 
 }
@@ -419,18 +432,18 @@ section {
   justify-content: center;
 }
 
-.testimonials__avatar {
-  width: 250px;
-  height: 150px;
+.testimonial__avatar {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin: 12px;
 }
 
-.testimonials__avatar:nth-child(odd) {
+.testimonial__avatar:nth-child(odd) {
   margin-right: 40px;
 }
 
-.testimonials__avatar:nth-child(even) {
+.testimonial__avatar:nth-child(even) {
   margin-left: 40px;
 }
 
@@ -451,7 +464,6 @@ section {
 
 
 /* Contact  */
-
 #contact {
   background-color: var(--color-yellow);
 }
