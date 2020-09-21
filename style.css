@@ -515,4 +515,34 @@ section {
     width: 100%;
     display: none;
   }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 40px;
+  }
+
+  .major:last-child {
+    margin-bottom: 0px;
+  }
+
+  .major__description {
+    max-width: 768px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project { /* 넓이의 비율을 조정하는 기능. value 1은 균등하게 width 배분 */
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 100px;
+    height: 100px;
+  }
+
 }
