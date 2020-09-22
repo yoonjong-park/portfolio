@@ -100,11 +100,13 @@ p {
 /* Navbar */
 #navbar {
   display: flex;
+  position: fixed;
+  width: 100%;
   justify-content: space-between;
-  background-color: var(--color-yellow);
+  background-color: transparent;
   align-items: center;
   color: var(--color-purple);
-  padding: 16px;
+  padding: 8px;
 }
 
 .navbar__menu {
@@ -116,6 +118,11 @@ p {
   align-items: center;
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+}
+
+#navbar.navbar--dark {
+  background-color: var(--color-yellow);
+  padding: 8px;
 }
 
 .navbar__menu__item {
@@ -147,6 +154,7 @@ p {
   /* background-image:url(".imgs/home-bg.png") center/cover no-repeat; */
   background-color: var(--color-yellow);
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
