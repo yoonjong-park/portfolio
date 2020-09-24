@@ -43,8 +43,16 @@ homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact');
 });
 
+const homeContainer = document.querySelector('.home__container');
+const homeContainerHeight = homeContainer.getBoundingClientRect().height;
+
+document.addEventListener('scroll', function(event) {
+    homeContainer.style.opacity = 1.1 - window.scrollY / homeContainerHeight;
+});
+
 // setup Function - scrollIntoView
 function scrollIntoView(selector) {
     const scrollMove = document.querySelector(selector);
     scrollMove.scrollIntoView({behavior: 'smooth'});
 }
+
