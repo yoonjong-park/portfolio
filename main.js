@@ -14,7 +14,8 @@ document.addEventListener('scroll', () => {   // "() => { "  = "function() {" //
 });
 
 
-// Control navbar menu
+
+// Control when navbar menu clicked
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', function(event) {
     // if(event.target.innerText === 'Home') // 처음에는 이렇게 하려 했으나..  이건 굉장히 비효율 적.
@@ -25,14 +26,25 @@ navbarMenu.addEventListener('click', function(event) {
         return;
 
     const scrollMove = document.querySelector(link);
-    // console.log(scrollTo.getBoundingClientRect());
-    // scrollTo.scrollIntoView({behavior: "smooth"});
+    // scrollMove.scrollIntoView({behavior: "smooth"});
     const top = scrollMove.offsetTop - navbarHeight < 0 ? 0 : scrollMove.offsetTop - navbarHeight;  // top - navbarHeight < 0 일 때 0으로 입력.
     const left = scrollMove.offsetLeft;
-    console.log(top);
     window.scrollTo({
         top:top,
         left:left,
         behavior: 'smooth'
     });
 });
+
+
+// ScrollTo Contact when you clicked "Contact Me" button.
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+    scrollIntoView('#contact');
+});
+
+// setup Function - scrollIntoView
+function scrollIntoView(selector) {
+    const scrollMove = document.querySelector(selector);
+    scrollMove.scrollIntoView({behavior: 'smooth'});
+}
