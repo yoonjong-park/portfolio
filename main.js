@@ -50,6 +50,22 @@ document.addEventListener('scroll', function(event) {
     homeContainer.style.opacity = 1.1 - window.scrollY / homeContainerHeight;
 });
 
+// Show "arrow up" Button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', function(event) {
+    if(window.scrollY > navbarHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+});
+arrowUp.addEventListener('click',function(event){
+    scrollIntoView('#home');
+});
+
+
+
+
 // setup Function - scrollIntoView
 function scrollIntoView(selector) {
     const scrollMove = document.querySelector(selector);
