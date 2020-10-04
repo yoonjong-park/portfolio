@@ -393,6 +393,10 @@ section {
   align-items: center;
 }
 
+.project.invisible {
+  display: none;
+}
+
 .project__img {
   max-width: 100%;
   max-height: 100%;
@@ -515,22 +519,27 @@ section {
   bottom: 50px;
   right: 50px;
   width: 70px;
-  height: 70px;
   font-size: 50px;
-  color: var(--color-purple);
-  background-color: var(--color-white);
-  border-radius: 50%;
-
-  opacity: 0;
   pointer-events: none;
-  
+  opacity: 0;
   transition: opacity 300ms ease-in;;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: var(--color-purple);
+
+
 }
 
-.arrow-up.visible {
+.arrow-up.visible { /* .arrow-up.visible  child class를 정의해두는 것. */
   opacity: 1;
   pointer-events: auto;
+}
+
+.arrow-up i {
+  /* vertical-align: middle; */
+  /* height: 100%; */
+  background-color: var(--color-white);
+  border: 8px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 
