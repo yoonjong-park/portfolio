@@ -12,8 +12,6 @@ document.addEventListener('scroll', () => {   // "() => { "  = "function() {" //
     }
 });
 
-
-
 // Control when navbar menu clicked
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', function(event) {
@@ -23,7 +21,7 @@ navbarMenu.addEventListener('click', function(event) {
 
     if(link == null)  // 빈 곳 클릭 시 넘기기.
         return;
-
+    navbarMenu.classList.remove('open'); // click 시 toggle close.
     const scrollMove = document.querySelector(link);
     // scrollMove.scrollIntoView({behavior: "smooth"});
     const top = scrollMove.offsetTop - navbarHeight < 0 ? 0 : scrollMove.offsetTop - navbarHeight;  // top - navbarHeight < 0 일 때 0으로 입력.
@@ -32,6 +30,13 @@ navbarMenu.addEventListener('click', function(event) {
         left:0,
         behavior: 'smooth'
     });
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+
+    navbarMenu.classList.toggle('open');
 });
 
 
@@ -74,6 +79,13 @@ workBtnContainer.addEventListener('click', function(event) {
     if(filter == null) {  // 빈 곳 클릭 시 넘기기.
         return;
     }
+
+    //Remove selection from the previous item and select new one.
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode; // Button 일 경우 : span을 선택했을 경우 Button으로 할당.
+    target.classList.add('selected');
+
     projectContainer.classList.add('animation-out');
     setTimeout(() => {
     projects.forEach((project) => {
