@@ -74,6 +74,8 @@ workBtnContainer.addEventListener('click', function(event) {
     if(filter == null) {  // 빈 곳 클릭 시 넘기기.
         return;
     }
+    projectContainer.classList.add('animation-out');
+    setTimeout(() => {
     projects.forEach((project) => {
         console.log(project.dataset.type);
         if(filter === '*' || filter === project.dataset.type) {
@@ -82,6 +84,8 @@ workBtnContainer.addEventListener('click', function(event) {
             project.classList.add('invisible');
         }
     });
+        projectContainer.classList.remove('animation-out');
+    },300);
 });
 
 
