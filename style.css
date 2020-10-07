@@ -185,13 +185,18 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  color: var(--color-yellow);
+  background-color: var(--color-purple);
+}
+
 .home__contact:active {
   transform: scale(0.95);
 }
 
 /* Section Common  */
 section {
-  padding: 50px;
+  padding: 16px;
   text-align: center;
   /* max-width: 1920px; */
   /* margin: auto; */
@@ -349,6 +354,7 @@ section {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -371,9 +377,10 @@ section {
   height: 24px;
   line-height: 24px;   /* 알아볼 것 */
   display: inline-block;
-  position: relative;
+  position: absolute;
+  margin-top: 4px;
   top: -10px;
-  left: 10px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration);
 }
@@ -554,6 +561,14 @@ section {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root{
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
   }  
@@ -575,9 +590,18 @@ section {
     display: block;
   }
 
+  .home__avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 6px solid var(--color-purple);
+  }
+
   .about__majors {
     flex-direction: column;
-  }
+    margin: 30px 0px;
+    }
+
 
   .major {
     margin-bottom: 40px;
@@ -595,13 +619,52 @@ section {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
   .project { /* 넓이의 비율을 조정하는 기능. value 1은 균등하게 width 배분 */
     flex-grow: 1;
   }
 
-  .testimonial__avatar {
-    width: 100px;
-    height: 100px;
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
   }
 
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even) {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .arrow-up {
+    position: fixed;
+    bottom: 16px;
+    right: 30px;
+    width: 50px;
+    font-size: 30px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 300ms ease-in;;
+    color: var(--color-purple);
+  }
+
+  .arrow-up i {
+    background-color: var(--color-white);
+    border: 4px solid var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
 }
