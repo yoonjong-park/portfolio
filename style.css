@@ -654,7 +654,7 @@ section {
     bottom: 16px;
     right: 50px;
     width: 50px;
-    font-size: 30px;
+    font-size: 20px;
     pointer-events: none;
     opacity: 0;
     transition: opacity 300ms ease-in;;
