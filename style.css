@@ -164,8 +164,8 @@ p {
 }
 
 .home__avatar {
-  width: 280px;
-  height: 280px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   border: 12px solid var(--color-purple);
 }
@@ -591,8 +591,8 @@ section {
   }
 
   .home__avatar {
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 6px solid var(--color-purple);
   }
@@ -652,7 +652,7 @@ section {
   .arrow-up {
     position: fixed;
     bottom: 16px;
-    right: 30px;
+    right: 50px;
     width: 50px;
     font-size: 30px;
     pointer-events: none;
