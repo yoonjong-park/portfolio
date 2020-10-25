@@ -164,8 +164,8 @@ p {
 }
 
 .home__avatar {
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   border: 12px solid var(--color-purple);
 }
